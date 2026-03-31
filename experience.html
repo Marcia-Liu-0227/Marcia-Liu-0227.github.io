@@ -3,68 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Experience | Zheying Liu</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@6.4.0/css/all.min.css">
+<title>Experience | Miss Liu</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+  }
+  body {
+    background: #105f41;
+    color: #e6f7ef;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+  .time-bar {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    color: #1effaa;
+    font-size: 0.9rem;
+  }
+  .navbar {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+  .navbar a {
+    color: #1effaa;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .card {
+    background: rgba(12, 60, 44, 0.6);
+    border-left: 3px solid #1effaa;
+    padding: 1.4rem;
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+  }
+  .card h3 { color: #fff; }
+  .card .firm { color: #1effaa; font-weight:500; }
+  .card .time { color: #aef9df; font-size:0.9rem; margin:0.3rem 0 0.8rem; }
+  .footer { text-align:center; margin-top:3rem; color:#1effaa; font-style:italic; }
+  .lang-switch { display:flex; justify-content:center; gap:0.6rem; margin-bottom:1rem; }
+  .lang-switch button { background:rgba(255,255,255,0.1); color:#e6f7ef; border:1px solid #1effaa; border-radius:6px; padding:0.3rem 0.7rem; font-size:0.9rem; cursor:pointer; }
+</style>
 </head>
 <body>
 
-<div class="bg-grid"></div>
-<canvas id="codeRain"></canvas>
-
-<audio id="bgm" loop>
-  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/FreezeTank/Atmospheric_Drama/FreezeTank_-_01_-_Digital_Shadows.mp3" type="audio/mpeg">
-
-
-<div class="music-btn" id="musicToggle">
-  <i class="fa-solid fa-music"></i>
-</div>
-
-<div class="info-bar">
-  <div id="real-time"><i class="fa-solid fa-clock"></i> Loading...</div>
-  <div class="weather">
-    <span id="weather-sh">22°C</span>
-    <span id="weather-hk">25°C</span>
-  </div>
-</div>
+<div class="time-bar" id="clock">Loading...</div>
 
 <div class="lang-switch">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('zh')">中</button>
-  <button onclick="setLang('tw')">繁</button>
+  <button onclick="setLang('en')">English</button>
+  <button onclick="setLang('zh')">中文</button>
+  <button onclick="setLang('tw')">繁體</button>
 </div>
 
-<nav class="navbar">
+<div class="navbar">
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
   <a href="experience.html">Experience</a>
   <a href="projects.html">Projects</a>
   <a href="blog.html">Blog</a>
   <a href="contact.html">Contact</a>
-</nav>
+</div>
 
 <div class="container">
-  <h2 class="section-title">Experience</h2>
-
+  <h2 class="section-title">Intern Experience</h2>
   <div class="card">
-    <div class="time">Jun 2025 – Aug 2025</div>
-    <h3>Franklin Templeton – EME Research Intern</h3>
-    <p>Conducted emerging market research, monitored macro indicators, supported investment reports and data analysis.</p>
+    <h3>EME Research Intern</h3>
+    <div class="firm">Franklin Templeton | AUM: 1.6Tn USD</div>
+    <div class="time">Jun 2025 – Aug 2025 | Hong Kong</div>
+    <p>• Built Excel model for China tourism market; data from NBS, Ministry of Culture & Tourism.</p>
+    <p>• Analyzed Tencent gaming across CN, JP, KR, TW; evaluated consumer spending structure.</p>
+    <p>• Forecasted 8% CAGR for food delivery; analyzed competition among Meituan, JD, Taobao.</p>
   </div>
-
   <div class="card">
-    <div class="time">Dec 2024 – Feb 2025</div>
-    <h3>CITIC Capital – Buyout Intern</h3>
-    <p>Assisted in financial modeling, due diligence, target screening and private equity memo drafting.</p>
+    <h3>Buyout Intern</h3>
+    <div class="firm">CITIC Capital | AUM: 17Bn USD</div>
+    <div class="time">Jan 2025 – May 2025 | Shanghai</div>
+    <p>• Conducted 15+ industry analyses; identified 7 targets; 3 entered due diligence.</p>
+    <p>• Delivered 20+ investor reports covering M&A trends and benchmarking.</p>
   </div>
-
   <div class="card">
-    <div class="time">Jul 2024 – Sep 2024</div>
-    <h3>Hejun Consulting – Consulting Intern</h3>
-    <p>Supported cost optimization projects, industry analysis and client strategy recommendations.</p>
+    <h3>Investment Intern</h3>
+    <div class="firm">Infinity Equity | AUM: 21Bn CNY</div>
+    <div class="time">Dec 2023 – Aug 2024 | Shenzhen</div>
+    <p>• Focus: Semiconductor materials (epoxy molding compound).</p>
+    <p>• Found 15% revenue overstatement; revised model led to 10% price reduction.</p>
+    <p>• Published 10-page market report; forecasted 12% CAGR to 2027.</p>
   </div>
 </div>
 
-<script src="script.js"></script>
+<div class="footer">L’honneur s’incline devant moi.</div>
+
+<script>
+setInterval(()=>{const d=new Date();const h=String(d.getHours()).padStart(2,'0');const m=String(d.getMinutes()).padStart(2,'0');const s=String(d.getSeconds()).padStart(2,'0');document.getElementById('clock').innerText=`${h}:${m}:${s}`},1000);
+function setLang(l){localStorage.setItem('lang',l);window.location.reload();}
+</script>
 </body>
 </html>
