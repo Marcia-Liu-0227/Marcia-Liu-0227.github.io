@@ -8,6 +8,8 @@
   * {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;}
   body {background:#105f41;color:#e6f7ef;padding:2rem;line-height:1.6;}
   .time-bar {position:fixed;top:10px;left:20px;color:#1effaa;font-size:0.9rem;}
+  .lang-switch {position:fixed;top:10px;right:20px;display:flex;gap:0.6rem;}
+  .lang-switch button {background:rgba(255,255,255,0.1);color:#e6f7ef;border:1px solid #1effaa;border-radius:6px;padding:0.3rem 0.7rem;font-size:0.9rem;cursor:pointer;}
   .navbar {display:flex;gap:1.2rem;justify-content:center;margin:2rem 0;flex-wrap:wrap;}
   .navbar a {color:#1effaa;text-decoration:none;font-weight:500;}
   .container {max-width:720px;margin:0 auto;}
@@ -19,14 +21,11 @@
   .form-group textarea {min-height:130px;}
   button {background:#1effaa;color:#0c4a31;border:none;padding:0.9rem;width:100%;border-radius:6px;font-size:1rem;font-weight:bold;cursor:pointer;}
   .footer {text-align:center;margin-top:3rem;color:#1effaa;font-style:italic;}
-  .lang-switch {display:flex;justify-content:center;gap:0.6rem;margin-bottom:1rem;}
-  .lang-switch button {background:rgba(255,255,255,0.1);color:#e6f7ef;border:1px solid #1effaa;border-radius:6px;padding:0.3rem 0.7rem;font-size:0.9rem;cursor:pointer;}
 </style>
 </head>
 <body>
 
 <div class="time-bar" id="clock">Loading...</div>
-
 <div class="lang-switch">
   <button onclick="setLang('en')">English</button>
   <button onclick="setLang('zh')">中文</button>
@@ -59,7 +58,7 @@
   </div>
 </div>
 
-<div class="footer">L’honneur s’incline devant moi.</div>
+<div class="footer">Je veux la gloire à mes genoux.</div>
 
 <script>
 setInterval(()=>{const d=new Date();const h=String(d.getHours()).padStart(2,'0');const m=String(d.getMinutes()).padStart(2,'0');const s=String(d.getSeconds()).padStart(2,'0');document.getElementById('clock').innerText=`${h}:${m}:${s}`},1000);
