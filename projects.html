@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | Miss Liu</title>
+<title>Projects | Miss Liu</title>
 <style>
   * {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,sans-serif;}
   body {background:#105f41;color:#e6f7ef;padding:2rem;line-height:1.6;}
   .time-bar {position:fixed;top:10px;left:20px;color:#1effaa;font-size:0.9rem;}
+  .lang-switch {position:fixed;top:10px;right:20px;display:flex;gap:0.6rem;}
+  .lang-switch button {background:rgba(255,255,255,0.1);color:#e6f7ef;border:1px solid #1effaa;border-radius:6px;padding:0.3rem 0.7rem;font-size:0.9rem;cursor:pointer;}
   .navbar {display:flex;gap:1.2rem;justify-content:center;margin:2rem 0;flex-wrap:wrap;}
   .navbar a {color:#1effaa;text-decoration:none;font-weight:500;}
   .container {max-width:720px;margin:0 auto;}
   .section-title {text-align:center;font-size:1.8rem;margin-bottom:2rem;}
   .card {background:rgba(12,60,44,0.6);border-left:3px solid #1effaa;padding:1.4rem;border-radius:10px;margin-bottom:1.2rem;}
-  .card h3 {color:#fff;margin-bottom:0.5rem;}
+  .card h3 {color:#fff;}
+  .card .firm {color:#1effaa;margin-bottom:0.8rem;}
   .footer {text-align:center;margin-top:3rem;color:#1effaa;font-style:italic;}
-  .lang-switch {display:flex;justify-content:center;gap:0.6rem;margin-bottom:1rem;}
-  .lang-switch button {background:rgba(255,255,255,0.1);color:#e6f7ef;border:1px solid #1effaa;border-radius:6px;padding:0.3rem 0.7rem;font-size:0.9rem;cursor:pointer;}
 </style>
 </head>
 <body>
 
 <div class="time-bar" id="clock">Loading...</div>
-
 <div class="lang-switch">
   <button onclick="setLang('en')">English</button>
   <button onclick="setLang('zh')">中文</button>
@@ -38,18 +38,28 @@
 </div>
 
 <div class="container">
-  <h2 class="section-title">Blog & Insights</h2>
+  <h2 class="section-title">Project Experience</h2>
   <div class="card">
-    <h3>Investment Research Notes</h3>
-    <p>Sharing thoughts on markets, modeling, and due diligence.</p>
+    <h3>Hejun Consulting</h3>
+    <div class="firm">Furniture Capacity Overseas Feasibility</div>
+    <p>• Analyzed SEA vs China labor costs; Vietnam 25% lower for Zhibang Furniture.</p>
+    <p>• Supported $8M annual revenue expansion plan.</p>
   </div>
   <div class="card">
-    <h3>Data & Valuation Insights</h3>
-    <p>DCF, comps, LBO, and quantitative analysis.</p>
+    <h3>BDA Consulting</h3>
+    <div class="firm">Southeast Asia E-commerce Data Project</div>
+    <p>• Tracked 3,000+ SKUs; 20% subsidy cut linked to 15% merchant retention drop.</p>
+    <p>• Built Power BI dashboard; reallocated $2M subsidies.</p>
+  </div>
+  <div class="card">
+    <h3>GSG Technology</h3>
+    <div class="firm">ESG Data Project</div>
+    <p>• Automated 20+ ESG metrics with R; cut manual work by 40%.</p>
+    <p>• Identified 12 high-risk firms; de-risked $10M+ portfolios.</p>
   </div>
 </div>
 
-<div class="footer">L’honneur s’incline devant moi.</div>
+<div class="footer">Je veux la gloire à mes genoux.</div>
 
 <script>
 setInterval(()=>{const d=new Date();const h=String(d.getHours()).padStart(2,'0');const m=String(d.getMinutes()).padStart(2,'0');const s=String(d.getSeconds()).padStart(2,'0');document.getElementById('clock').innerText=`${h}:${m}:${s}`},1000);
