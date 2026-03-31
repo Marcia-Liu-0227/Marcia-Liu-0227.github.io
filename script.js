@@ -35,7 +35,7 @@ function setLang(l) {
   applyLang();
 }
 
-// 时间
+// 实时时间
 function updateTime() {
   const d = new Date();
   const s = `${String(d.getHours()).padStart(2,0)}:${String(d.getMinutes()).padStart(2,0)}:${String(d.getSeconds()).padStart(2,0)}`;
@@ -45,48 +45,68 @@ function updateTime() {
 setInterval(updateTime,1000);
 updateTime();
 
-// 天气
+// 只显示温度
 async function loadWeather() {
+  const apiKey = "da6e47791f72401ca4982911253103";
   try {
-    const r = await fetch(`https://api.weatherapi.com/v1/current.json?q=Shanghai&key=da6e47791f72401ca4982911253103`);
+    const r = await fetch(`https://api.weatherapi.com/v1/current.json?q=Shanghai&key=${apiKey}`);
     const d = await r.json();
-    document.getElementById('weather-sh').innerText = `Shanghai ${d.current.temp_c}°C`;
-  } catch(e){}
+    const sh = document.getElementById('weather-sh');
+    if(sh) sh.innerText = `${d.current.temp_c}°C`;
+  } catch(e){
+    const sh = document.getElementById('weather-sh');
+    if(sh) sh.innerText = "--°C";
+  }
   try {
-    const r = await fetch(`https://api.weatherapi.com/v1/current.json?q=HongKong&key=da6e47791f72401ca4982911253103`);
+    const r = await fetch(`https://api.weatherapi.com/v1/current.json?q=HongKong&key=${apiKey}`);
     const d = await r.json();
-    document.getElementById('weather-hk').innerText = `Hong Kong ${d.current.temp_c}°C`;
-  } catch(e){}
+    const hk = document.getElementById('weather-hk');
+    if(hk) hk.innerText = `${d.current.temp_c}°C`;
+  } catch(e){
+    const hk = document.getElementById('weather-hk');
+    if(hk) hk.innerText = "--°C";
+  }
 }
 loadWeather();
 
-// 音乐
+// 音乐修复
 const bgm = document.getElementById('bgm');
 const btn = document.getElementById('musicToggle');
 let playing = false;
 btn.onclick = ()=>{
-  if(playing){ bgm.pause(); btn.innerHTML='<i class="fa-solid fa-music"></i>'; }
-  else{ bgm.play().catch(()=>{}); btn.innerHTML='<i class="fa-solid fa-pause"></i>'; }
+  if(playing){
+    bgm.pause();
+    btn.innerHTML='<i class="fa-solid fa-music"></i>';
+  } else {
+    bgm.play().catch(()=>{});
+    btn.innerHTML='<i class="fa-solid fa-pause"></i>';
+  }
   playing=!playing;
 };
 
 // 代码雨
 const canvas = document.getElementById('codeRain');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-const cols = Math.floor(canvas.width/20);
-const drops = Array(cols).fill(1);
-function rain(){
-  ctx.fillStyle='rgba(10,58,38,0.1)';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle='#1effaa';
-  ctx.font='16px monospace';
-  drops.forEach((y,i)=>{
-    ctx.fillText(String.fromCharCode(0x30A0+Math.random()*96),i*20,y);
-    drops[i] = y>canvas.height*Math.random()?0:y+20;
-  });
+if(canvas){
+  const ctx = canvas.getContext('2d');
+  function resize(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize);
+  const cols = Math.floor(canvas.width/20);
+  const drops = Array(cols).fill(1);
+  function rain(){
+    ctx.fillStyle='rgba(10,58,38,0.1)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#1effaa';
+    ctx.font='16px monospace';
+    drops.forEach((y,i)=>{
+      ctx.fillText(String.fromCharCode(0x30A0+Math.random()*96),i*20,y);
+      drops[i] = y>canvas.height*Math.random()?0:y+20;
+    });
+  }
+  setInterval(rain,35);
 }
-setInterval(rain,35);
 
 applyLang();
