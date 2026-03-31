@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Marcia 小天地 | 刘哲瑛</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Zheying Liu</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@6.4.0/css/all.min.css">
 </head>
 <body>
 
+<div class="music-btn" id="musicToggle">
+  <i class="fa-solid fa-music"></i>
+</div>
+
+<div class="info-bar">
+  <div id="real-time"><i class="fa-solid fa-clock"></i> Loading...</div>
+  <div class="weather">
+    <span id="weather-sh"><i class="fa-solid fa-cloud"></i> Shanghai...</span>
+    <span id="weather-hk"><i class="fa-solid fa-cloud"></i> Hong Kong...</span>
+  </div>
+</div>
+
+<div class="lang-switch">
+  <button onclick="setLang('en')">English</button>
+  <button onclick="setLang('zh')">中文</button>
+  <button onclick="setLang('tw')">繁中</button>
+</div>
+
 <nav class="navbar">
-    <a href="home.html">首页</a>
-    <a href="about.html">关于我</a>
-    <a href="experience.html">经历</a>
-    <a href="projects.html">项目</a>
-    <a href="blog.html">Marcia 小天地</a>
-    <a href="resume.html">简历</a>
+  <a href="index.html"><i class="fa-solid fa-house"></i></a>
+  <a href="about.html"><i class="fa-solid fa-user-secret"></i></a>
+  <a href="experience.html"><i class="fa-solid fa-briefcase"></i></a>
+  <a href="projects.html"><i class="fa-solid fa-code"></i></a>
+  <a href="blog.html"><i class="fa-solid fa-terminal"></i></a>
+  <a href="contact.html"><i class="fa-solid fa-envelope"></i></a>
 </nav>
 
 <div class="container">
-    <h2 class="section-title">Marcia 小天地 • 刘哲瑛的思考与阅读</h2>
-
-    <!-- 发文章直接复制这一块 ↓↓↓ -->
-    <div class="blog-card">
-        <h3>读书笔记｜投资与思考</h3>
-        <div class="date">2026-04-01</div>
-        <p>分享读书心得、行业观察、策略与逻辑复盘。</p>
-    </div>
-
-    <div class="blog-card">
-        <h3>成长随笔｜野心与自律</h3>
-        <div class="date">2026-04-01</div>
-        <p>je veux la gloire à mes genoux.</p>
-    </div>
-    <!-- 复制到这里 ↑↑↑ -->
-
+  <h2 class="section-title" data-i18n="blog.title">Marcia's Blog</h2>
+  <div class="blog-card">
+    <h3><i class="fa-solid fa-book"></i> <span data-i18n="blog.n1">Reading Notes</span></h3>
+    <p class="date">2026-03-31</p>
+    <p data-i18n="blog.d1">Sharing insights on investment, negotiation and history.</p>
+  </div>
+  <div class="blog-card">
+    <h3><i class="fa-solid fa-magnifying-glass-chart"></i> <span data-i18n="blog.n2">Investment Thoughts</span></h3>
+    <p class="date">2026-03-31</p>
+    <p data-i18n="blog.d2">Personal views on market logic and industry trends.</p>
+  </div>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
