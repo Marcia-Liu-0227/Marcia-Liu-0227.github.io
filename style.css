@@ -2,43 +2,41 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 html, body {
   width: 100%;
   min-height: 100vh;
-  background-color: #0a3a26;
+  background-color: #0c4a31;
   color: #e6f7ef;
   overflow-x: hidden;
 }
 
-/* 几何透明网格 */
 .bg-grid {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background-image:
-    linear-gradient(rgba(30, 255, 170, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30, 255, 170, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(30, 255, 170, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 255, 170, 0.08) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
-/* 代码雨画布 */
 #codeRain {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: -2;
-  opacity: 0.15;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 .info-bar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: rgba(10, 40, 28, 0.85);
+  background: rgba(10, 50, 35, 0.9);
   padding: 0.7rem 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -47,7 +45,7 @@ html, body {
   border-bottom: 1px solid rgba(30, 255, 170, 0.2);
 }
 .weather { display: flex; gap: 1.2rem; }
-.weather span { color: #aef9df; }
+.weather span { color: #1effaa; font-weight: 500; }
 
 .lang-switch {
   position: fixed;
@@ -56,7 +54,7 @@ html, body {
   z-index: 10;
 }
 .lang-switch button {
-  background: rgba(20, 60, 42, 0.7);
+  background: rgba(20, 70, 50, 0.7);
   color: #e6f7ef;
   border: 1px solid #1effaa;
   border-radius: 99px;
@@ -68,7 +66,7 @@ html, body {
 .navbar {
   position: sticky;
   top: 3.4rem;
-  background: rgba(10, 40, 28, 0.85);
+  background: rgba(10, 50, 35, 0.9);
   padding: 1rem;
   display: flex;
   gap: 1.2rem;
@@ -114,7 +112,7 @@ html, body {
 }
 
 .card {
-  background: rgba(15, 50, 35, 0.6);
+  background: rgba(15, 60, 40, 0.6);
   border: 1px solid rgba(30, 255, 170, 0.15);
   border-left: 3px solid #1effaa;
   padding: 1.6rem;
@@ -150,7 +148,7 @@ html, body {
   position: fixed;
   left: 1.2rem; bottom: 1.2rem;
   width: 3.2rem; height: 3.2rem;
-  background: rgba(20, 60, 42, 0.8);
+  background: rgba(20, 70, 50, 0.8);
   border: 1px solid #1effaa;
   border-radius: 50%;
   display: grid;
@@ -160,13 +158,11 @@ html, body {
   z-index: 20;
 }
 
-.form-group {
-  margin-bottom: 1rem;
-}
+.form-group { margin-bottom: 1rem; }
 .form-group input, .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  background: rgba(20, 60, 42, 0.5);
+  background: rgba(20, 70, 50, 0.5);
   border: 1px solid rgba(30, 255, 170, 0.2);
   border-radius: 6px;
   color: #fff;
@@ -174,7 +170,7 @@ html, body {
 .form-group textarea { min-height: 120px; }
 .btn-submit {
   background: #1effaa;
-  color: #0a3a26;
+  color: #0c4a31;
   border: none;
   padding: 0.8rem 1.6rem;
   border-radius: 6px;
